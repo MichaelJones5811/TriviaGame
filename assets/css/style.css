@@ -1,0 +1,8 @@
+#startButton{
+	text-align: center;
+	border: groove 3px green;
+}
+#startButton:hover{
+	background: blue;
+
+}
