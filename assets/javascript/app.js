@@ -1,4 +1,4 @@
-alert("hello world");
+
 
 var number = 10;
 var intervalId;
