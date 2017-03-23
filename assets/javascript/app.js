@@ -1,6 +1,6 @@
 alert("hello world");
 
-var number = 30;
+var number = 10;
 var intervalId;
 var questions = [ 
       {script: "Who played First Base", answer: ["Rizzo", "Bryant","Ross", "Baez"],correctAnswer:"Rizzo"},
@@ -27,9 +27,11 @@ function restTimer(){
 
 }
 function resultPage(){
-   $("#answer").html(
-      "<p> Correct Answers "+correct +"</p>" +
-      "<p> Incorrect Answers "+incorrect +"</p>");
+   $("#answer").html("<h1>Results</h1>" +
+      "<p> Questions you got right "+correct +"</p>" +
+      "<p> Questions you got wrong "+incorrect +"</p>");
+    $(".score").hide();
+   
 }
 
 function decrement() {
@@ -84,6 +86,7 @@ function decrement() {
    // moves the program forward to the next question
    function forward(){
     if(counter<4){
+      number = 10;
       insertQuestion();
     }
   }
