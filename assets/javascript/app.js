@@ -1,6 +1,6 @@
 alert("hello world");
 
-var number = 10;
+var number = 30;
 var intervalId;
 var questions = [ 
       {script: "Who played First Base", answer: ["Rizzo", "Bryant","Ross", "Baez"],correctAnswer:"Rizzo"},
@@ -21,10 +21,15 @@ function timer(){
 
 }
 function restTimer(){
-   
-   clearInterval(timer)
    setTimeout(forward, 4000);
 
+   setTimeout(number,4000);
+
+}
+function resultPage(){
+   $("#answer").html(
+      "<p> Correct Answers "+correct +"</p>" +
+      "<p> Incorrect Answers "+incorrect +"</p>");
 }
 
 function decrement() {
@@ -32,12 +37,11 @@ function decrement() {
       $("#countDown").html("Time Remaining " + number);
       number--;
 
-      if (number === 0) {
+      if (number < 1) {
 
        
         clearInterval(intervalId);
-        
-        alert("Time Up!");
+        resultPage();
       }
     }
     // question and answer function
@@ -88,7 +92,7 @@ function decrement() {
 
   	$("#startButton").click(function(){
   	
-    	alert("I was clicked");
+    	
   		
       insertQuestion();
       checkAnswers();

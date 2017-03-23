@@ -4,5 +4,12 @@
 }
 #startButton:hover{
 	background: blue;
+	text-align: center;
+	border: groove 3px green;
+
+}
+.click:hover{
+	text-align: center;
+	border: groove 3px green;
 
 }
